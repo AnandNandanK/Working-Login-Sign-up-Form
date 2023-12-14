@@ -7,11 +7,40 @@
 }
 
 @media (max-width: 700px) {
-    .respon{
-        display:none;
-    }
+ 
 
     .img{
         display: none;
     }
+
+    .logo{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 2px;
+        
+    }
+
+    .logo p{
+        max-width: 100px;
+        font-size: small;
+        margin-right: 10px;
+
+    }
+
+    .nav-bar{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .navitem{
+        display: none;
+    }
+
+    .logup{
+        gap: 1;
+    }
+    
 }
+

@@ -82,8 +82,8 @@ const SignUpform = ({setIsLogin}) => {
                 <form onSubmit={submitHandler} className='flex flex-col w-full gap-y-3 mt-[15px] '>
                     {/* First Name and Last Name */}
                         <div className="flex justify-between ">
-                            <label className=''>
-                            <p className='text-[0.875rem] text-white mb-1 leading-[1.3rem]'>First Name<sup>*</sup></p>
+                            <label className='mr-1'>
+                            <p className='text-[0.875rem] text-white mb-1 leading-[1.3rem] '>First Name<sup>*</sup></p>
 
                             <input
                                 required
@@ -93,7 +93,7 @@ const SignUpform = ({setIsLogin}) => {
                                 onChange={changeHandler}
                                 value={formData.fname}
 
-                                className="bg-slate-800 rounded-[0.2rem] w-full p-[9px] border-none outline-none"
+                                className="bg-slate-800 rounded-[0.2rem] w-full p-[9px] border-none outline-none "
 
                             ></input>
                             </label>

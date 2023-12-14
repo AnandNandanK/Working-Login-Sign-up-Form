@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import image from './logo.png'
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"
+import { FaBarsStaggered } from "react-icons/fa6";
+import { RxCross1 } from "react-icons/rx";
 
 
 
@@ -20,26 +22,43 @@ const Nav = (props) => {
     navigate('/home');
   }
 
+  
+
+  const [navicon, setNavIcon] = useState(false);
+
+  function switchHandler(){
+       setNavIcon(()=>{
+        return !navicon
+    })
+  }
+
   return (
     <div className='w-11/12 max-w-[1160px] py-4 mx-auto'>
 
-      <nav className='flex  justify-between relative'>
+      <nav className='flex  justify-between relative nav-bar'>
 
         <NavLink to='/'>
-          <div className='flex respon'>
+          <div className='flex logo'>
             <img src={image} className='h-[50px]  w-auto' alt='logo'></img>
             <p className='text-white text-xl font-bold flex items-center'>tudyNotations</p>
           </div>
         </NavLink>
-         
-        <ul className='flex gap-[3rem]  text-white items-center'>
+
+        <div className='text-white absolute right-2 hidden'>
+
+          <button onClick={switchHandler}>
+            {!navicon ? (<FaBarsStaggered />) : (<RxCross1 />)}
+          </button>
+        </div>
+
+        <ul className='flex gap-[3rem]  text-white items-center navitem'>
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/about'>About</NavLink></li>
           <li><NavLink to='/contact'>Contact</NavLink></li>
         </ul>
 
 
-        <ul className='flex gap-8 left-0 text-white'>
+        <ul className='flex gap-8 left-0 text-white logup'>
 
           {!isLogin &&
             <NavLink to='/sign-up'>
